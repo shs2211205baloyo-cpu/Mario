@@ -4,300 +4,285 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kulotworkzz | Mechanic Portfolio</title>
-
+    <title>KULOTWORKZZ | Mechanic Portfolio</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style type="text/tailwindcss">
         @custom-variant dark (&:where(.dark, .dark *));
 
         @layer components {
-            .darkmode {
-                @apply rounded-2xl border border-[#F4AE52]/70 bg-white/40 shadow-xl backdrop-blur-xl transition duration-300 dark:bg-white/10;
+            .page-background {
+             background: linear-gradient(135deg, #F4AE52, #D4621A);
+             @apply transition-colors duration-500;
             }
+            .dark .page-background {
+               background: linear-gradient(135deg, #1C1917, #2A1A0E, #0C0A09);
+                        }
+            .glass-card {
+                @apply rounded-2xl border p-8 shadow-xl backdrop-blur-2xl;
+                @apply border-white/40 bg-white/25;
+                @apply dark:border-white/20 dark:bg-white/10;
+            }
+
             .btn-primary {
-                @apply inline-flex items-center justify-center rounded-xl bg-[#F4AE52] px-6 py-3 font-bold text-[#2A1A0E] shadow-md transition duration-300 hover:-translate-y-1 hover:bg-[#D4621A] hover:text-white;
+                @apply rounded-xl bg-[#F4AE52] px-6 py-3 font-bold text-[#2A1A0E];
+                @apply hover:bg-[#D4621A] hover:text-white;
             }
+
             .btn-secondary {
-                @apply inline-flex items-center justify-center rounded-xl border-2 border-[#D4621A] bg-white/20 px-6 py-3 font-bold text-[#2A1A0E] transition duration-300 hover:bg-[#D4621A] hover:text-white dark:text-[#F4AE52];
+                @apply rounded-xl border-2 border-[#D4621A] px-6 py-3 font-bold text-[#D4621A];
+                @apply hover:bg-[#D4621A] hover:text-white;
+                @apply dark:border-[#F4AE52] dark:text-[#F4AE52];
             }
+
             .btn-accent {
-                @apply inline-flex items-center justify-center rounded-xl bg-[#2A1A0E] px-6 py-3 font-bold text-[#F4AE52] shadow-md transition duration-300 hover:-translate-y-1 hover:bg-[#D4621A] hover:text-white;
+                @apply rounded-xl bg-[#2A1A0E] px-6 py-3 font-bold text-[#F4AE52];
+                @apply hover:bg-[#D4621A] hover:text-white;
             }
+
             .service-card {
-                @apply rounded-2xl border border-[#F4AE52]/80 bg-white/30 p-6 text-left shadow-md backdrop-blur-md transition duration-300 hover:-translate-y-2 hover:border-[#D4621A] hover:shadow-xl dark:bg-[#2A1A0E]/40;
+                @apply rounded-2xl border border-white/40 bg-white/25 p-6 shadow-lg backdrop-blur-xl;
+                @apply hover:bg-white/40 hover:shadow-2xl;
+                @apply dark:border-white/20 dark:bg-white/10 dark:hover:bg-white/20;
+                @apply dark:border-white/20 dark:bg-white/5 dark:hover:bg-white/10;
             }
-            .section-label {
-                @apply text-sm font-extrabold uppercase tracking-[0.3em] text-[#D4621A];
-            }
+
             .form-field {
-                @apply w-full rounded-xl border border-[#D4621A]/50 bg-white/70 p-3 text-[#2A1A0E] outline-none transition placeholder:text-[#2A1A0E]/60 focus:border-[#D4621A] focus:ring-2 focus:ring-[#F4AE52] dark:bg-white/90;
+                @apply w-full rounded-xl border border-[#D4621A]/40 bg-white/50 px-4 py-3 outline-none;
+                @apply focus:border-[#D4621A] focus:ring-2 focus:ring-[#F4AE52];
+                @apply dark:border-white/20 dark:bg-black/20 dark:text-white;
             }
-}
-  
+        }
     </style>
 </head>
 
-<body class="min-h-screen bg-[#F4AE52] text-[#2A1A0E] transition-colors duration-500 dark:bg-[#2A1A0E] dark:text-white">
+<body class="page-background min-h-screen text-[#2A1A0E] transition-colors duration-500 dark:text-white">
 
-    <!-- HEADER -->
-    <header
-        class="sticky top-0 z-50 border-b border-[#2A1A0E]/10 bg-[#F4AE52]/90 px-5 py-4 shadow-sm backdrop-blur-xl dark:border-[#F4AE52]/20 dark:bg-[#2A1A0E]/90">
-        <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4">
-
-            <a href="#hero" class="text-xl font-black tracking-tight text-[#2A1A0E] dark:text-[#F4AE52]">
-                KULOT<span class="text-[#D4621A]">WORKZZ</span>.
+    <!-- Navigation -->
+    <header class="px-6 py-5">
+        <nav class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4">
+            <a href="#home" class="text-2xl font-black tracking-wide">
+                KULOT<span class="text-white">WORKZZ</span>
             </a>
 
-            <div class="flex items-center gap-4">
-                <ul class="hidden items-center gap-6 font-semibold md:flex">
-                    <li><a href="#hero" class="transition hover:text-[#D4621A]">Home</a></li>
-                    <li><a href="#about" class="transition hover:text-[#D4621A]">About</a></li>
-                    <li><a href="#services" class="transition hover:text-[#D4621A]">Services</a></li>
-                    <li><a href="#contact" class="transition hover:text-[#D4621A]">Contact</a></li>
-                </ul>
+            <div class="flex flex-wrap items-center gap-5 font-semibold">
+                <a href="#home" class="hover:text-white">Home</a>
+                <a href="#about" class="hover:text-white">About</a>
+                <a href="#services" class="hover:text-white">Services</a>
+                <a href="#contact" class="hover:text-white">Contact</a>
 
-                <button id="toggledark" class="btn-primary">
+                <button id="toggledark" type="button"
+                    class="rounded-xl border border-white/50 bg-white/25 px-4 py-2 font-bold">
                     Toggle
+                </button>
+                <button id="replayIntro" class="btn-primary">
+                    Refresh
                 </button>
             </div>
         </nav>
     </header>
 
-    <main class="mx-auto flex max-w-6xl flex-col gap-8 px-5 py-10 md:px-8 md:py-14">
+    <main class="mx-auto max-w-6xl space-y-12 px-6 py-8">
 
-        <!-- HERO -->
-        <section id="hero" class="darkmode relative overflow-hidden p-8 md:p-14">
-            <div class="grid items-center gap-10 md:grid-cols-2">
-
-                <div>
-                    <p class="section-label mb-4">Automotive • Repair • Passion</p>
-
-                    <h1 class="text-5xl font-black leading-tight tracking-tight md:text-7xl">
-                        KULOT<span class="text-[#D4621A]">WORKZZ</span><span class="text-[#F4AE52]">.</span>
-                    </h1>
-
-                    <h2 class="mt-4 text-2xl font-extrabold md:text-3xl">
-                        The <span class="text-[#D4621A]">Mechanic.</span>
-                    </h2>
-
-                    <div class="my-5 h-1 w-20 rounded-full bg-[#D4621A]"></div>
-
-                    <p class="max-w-lg text-base leading-7 md:text-lg">
-                        I build my own unit. Driven by passion, powered by hard work,
-                        and dedicated to keeping every ride running smoothly.
-                    </p>
-
-                    <div class="mt-8 flex flex-wrap gap-4">
-                        <a href="#services" class="btn-primary">Explore Services ↗</a>
-                        <a href="#about" class="btn-secondary">About Me</a>
-                    </div>
-                </div>
-
-                <!-- Decorative automotive graphic -->
-                <div
-                    class="flex min-h-64 items-center justify-center rounded-3xl border border-[#F4AE52]/70 bg-[#2A1A0E] p-8 shadow-2xl">
-                    <div class="text-center">
-                        <div class="text-8xl md:text-9xl">⚙️</div>
-                        <p class="mt-5 text-xl font-black tracking-[0.2em] text-[#F4AE52]">
-                            BUILT NOT BOUGHT
-                        </p>
-                        <p class="mt-2 text-sm font-medium text-white/70">
-                            Passion in every repair.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="darkmode p-8 md:p-12">
-            <div class="grid gap-8 md:grid-cols-[1fr_2fr] md:items-center">
-
-                <div>
-                    <p class="section-label mb-3">Get to know me</p>
-                    <h2 class="text-4xl font-black md:text-5xl">
-                        About <span class="text-[#D4621A]">Me.</span>
-                    </h2>
-                    <div class="mt-4 h-1 w-16 rounded-full bg-[#D4621A]"></div>
-                </div>
-
-                <div>
-                    <p class="text-lg leading-8">
-                        Dream big, work hard, and one day, I'll build a place
-                        I can proudly call my own. I'm passionate about mechanics,
-                        vehicle maintenance, and building my own unit.
-                    </p>
-
-                    <p class="mt-4 leading-7 opacity-80">
-                        My goal is to improve my skills, understand every part of a
-                        vehicle, and deliver reliable work with attention to detail.
-                    </p>
-
-                    <a href="#contact" class="btn-primary mt-6">Let's Connect →</a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SERVICES -->
-        <section id="services" class="darkmode p-8 md:p-12">
-
-            <div class="mb-10 text-center">
-                <p class="section-label mb-3">What I can do</p>
-
-                <h2 class="text-4xl font-black md:text-5xl">
-                    My <span class="text-[#D4621A]">Services.</span>
-                </h2>
-
-                <p class="mx-auto mt-4 max-w-xl leading-7">
-                    Auto repair and maintenance to help keep your vehicle
-                    safe, reliable, and ready for the road.
+        <!-- Hero -->
+        <section id="home" class="grid items-center gap-10 md:grid-cols-2">
+            <div>
+                <p class="mb-3 font-bold uppercase tracking-[0.3em] text-white">
+                    Mechanic Portfolio
                 </p>
-            </div>
 
-            <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <h1 class="mb-6 text-4xl font-black leading-tight md:text-6xl">
+                    Mario<span class="text-white">Baloyo</span> Jr.
+                </h1>
 
-                <!-- Service 1 -->
-                <article class="service-card">
-                    <div class="mb-5 flex size-14 items-center justify-center rounded-2xl bg-[#F4AE52] text-3xl">
-                        🔧
-                    </div>
-                    <h3 class="text-xl font-extrabold">General Repair</h3>
-                    <p class="mt-3 leading-7 opacity-80">
-                        Troubleshooting common vehicle problems and performing
-                        general maintenance.
-                    </p>
-                    <div class="mt-5 h-1 w-12 rounded-full bg-[#D4621A]"></div>
-                </article>
-
-                <!-- Service 2 -->
-                <article class="service-card">
-                    <div class="mb-5 flex size-14 items-center justify-center rounded-2xl bg-[#F4AE52] text-3xl">
-                        🛢️
-                    </div>
-                    <h3 class="text-xl font-extrabold">Oil Change</h3>
-                    <p class="mt-3 leading-7 opacity-80">
-                        Routine engine oil and filter maintenance to support
-                        smooth engine performance.
-                    </p>
-                    <div class="mt-5 h-1 w-12 rounded-full bg-[#D4621A]"></div>
-                </article>
-
-                <!-- Service 3 -->
-                <article class="service-card">
-                    <div class="mb-5 flex size-14 items-center justify-center rounded-2xl bg-[#F4AE52] text-3xl">
-                        🛞
-                    </div>
-                    <h3 class="text-xl font-extrabold">Brake & Tire Service</h3>
-                    <p class="mt-3 leading-7 opacity-80">
-                        Brake inspections and tire maintenance to help promote
-                        safer driving.
-                    </p>
-                    <div class="mt-5 h-1 w-12 rounded-full bg-[#D4621A]"></div>
-                </article>
-
-                <!-- Service 4 -->
-                <article class="service-card">
-                    <div class="mb-5 flex size-14 items-center justify-center rounded-2xl bg-[#F4AE52] text-3xl">
-                        🚘
-                    </div>
-                    <h3 class="text-xl font-extrabold">Engine Diagnostics</h3>
-                    <p class="mt-3 leading-7 opacity-80">
-                        Checking engine symptoms and identifying possible
-                        issues before repairs.
-                    </p>
-                    <div class="mt-5 h-1 w-12 rounded-full bg-[#D4621A]"></div>
-                </article>
-
-                <!-- Service 5 -->
-                <article class="service-card">
-                    <div class="mb-5 flex size-14 items-center justify-center rounded-2xl bg-[#F4AE52] text-3xl">
-                        🔋
-                    </div>
-                    <h3 class="text-xl font-extrabold">Battery Service</h3>
-                    <p class="mt-3 leading-7 opacity-80">
-                        Battery checks and basic electrical troubleshooting
-                        for common starting issues.
-                    </p>
-                    <div class="mt-5 h-1 w-12 rounded-full bg-[#D4621A]"></div>
-                </article>
-
-                <!-- Service 6 -->
-                <article class="service-card">
-                    <div class="mb-5 flex size-14 items-center justify-center rounded-2xl bg-[#F4AE52] text-3xl">
-                        ⚙️
-                    </div>
-                    <h3 class="text-xl font-extrabold">Vehicle Maintenance</h3>
-                    <p class="mt-3 leading-7 opacity-80">
-                        Routine checks and preventive maintenance to keep
-                        vehicles in good condition.
-                    </p>
-                    <div class="mt-5 h-1 w-12 rounded-full bg-[#D4621A]"></div>
-                </article>
-
-            </div>
-
-            <div class="mt-10 text-center">
-                <a href="#contact" class="btn-accent">Book an Appointment ↗</a>
-                <p class="mt-5 font-bold italic text-[#D4621A]">
-                    Your Unit, My Priority.
+                <p class="mb-8 max-w-xl text-lg">
+                    Reliable automotive services, quality repairs, and expert care
+                    to keep your vehicle safe and road-ready.
                 </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <a href="#services" class="btn-primary">View Services</a>
+                    <a href="#contact" class="btn-secondary">Contact Me</a>
+                </div>
             </div>
 
+            <div class="glass-card flex min-h-72 flex-col items-center justify-center text-center">
+                <div class="mb-4 text-8xl">🔧</div>
+                <h2 class="text-3xl font-black">KULOTWORKZZ</h2>
+                <p class="mt-2 font-semibold">Your Trusted Mechanic</p>
+                <p class="mt-4 text-sm">Maintenance • Repair • Inspection</p>
+            </div>
         </section>
 
-        <!-- CONTACT -->
-        <section id="contact" class="darkmode p-8 md:p-12">
+        <!-- About -->
+        <section id="about" class="glass-card">
+            <div class="grid items-center gap-8 md:grid-cols-2">
+                <div>
+                    <p class="mb-2 font-bold uppercase tracking-widest text-white">
+                        Get to Know Me
+                    </p>
+                    <h2 class="mb-5 text-3xl font-black md:text-4xl">About Me</h2>
+                    <p class="mb-4 leading-relaxed">
+                        Welcome to KULOTWORKZZ! I am passionate about automotive
+                        maintenance and repair. My goal is to provide dependable
+                        service and help every customer keep their vehicle in
+                        excellent condition.
+                    </p>
+                    <p class="leading-relaxed">
+                        From routine maintenance to troubleshooting, I focus on
+                        careful inspection, honest service, and quality workmanship.
+                    </p>
+                </div>
 
+                <div class="rounded-2xl border border-[#F4AE52] bg-[#2A1A0E]/80 p-8 text-center text-white">
+                    <div id="gearIcon" class="mb-4 text-7xl inline-block">⚙️</div>
+                    <h3 class="text-2xl font-black text-[#F4AE52]">Skill. Care. Quality.</h3>
+                    <p class="mt-3">Taking care of your vehicle, one repair at a time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services">
             <div class="mb-8 text-center">
-                <p class="section-label mb-3">Let's talk</p>
-
-                <h2 class="text-4xl font-black md:text-5xl">
-                    Get in <span class="text-[#D4621A]">Touch.</span>
-                </h2>
-
-                <p class="mt-4 leading-7">
-                    Have a question or want to discuss a service? Send me a message.
-                </p>
+                <p class="font-bold uppercase tracking-widest text-white">What I Do</p>
+                <h2 class="mt-2 text-3xl font-black md:text-4xl">My Services</h2>
+                <p class="mt-3">Automotive care you can count on.</p>
             </div>
 
-            <form action="#" method="POST" class="mx-auto flex max-w-2xl flex-col gap-5">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <article class="service-card">
+                    <div class="mb-4 text-5xl">🔧</div>
+                    <h3 class="mb-3 text-xl font-black">Engine Repair</h3>
+                    <p>Engine inspection and troubleshooting to help restore vehicle performance.</p>
+                </article>
 
+                <article class="service-card">
+                    <div class="mb-4 text-5xl">🛢️</div>
+                    <h3 class="mb-3 text-xl font-black">Oil Change</h3>
+                    <p>Routine oil and filter changes to help maintain engine health.</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="mb-4 text-5xl">🛞</div>
+                    <h3 class="mb-3 text-xl font-black">Tire Services</h3>
+                    <p>Tire checks and basic tire maintenance for safer driving.</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="mb-4 text-5xl">🔋</div>
+                    <h3 class="mb-3 text-xl font-black">Battery Check</h3>
+                    <p>Battery testing and inspection to help prevent starting problems.</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="mb-4 text-5xl">🧰</div>
+                    <h3 class="mb-3 text-xl font-black">General Maintenance</h3>
+                    <p>Regular vehicle checks to help keep your car running smoothly.</p>
+                </article>
+
+                <article class="service-card">
+                    <div class="mb-4 text-5xl">🚘</div>
+                    <h3 class="mb-3 text-xl font-black">Vehicle Inspection</h3>
+                    <p>Basic vehicle inspections to identify possible issues that need attention.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="glass-card">
+            <div class="mb-8 text-center">
+                <p class="font-bold uppercase tracking-widest text-white">Let's Connect</p>
+                <h2 class="mt-2 text-3xl font-black md:text-4xl">Contact Me</h2>
+                <p class="mt-3">Have a question or need automotive service? Send a message.</p>
+            </div>
+
+            <form id="contactForm" class="mx-auto max-w-2xl space-y-5">
                 <div>
                     <label for="name" class="mb-2 block font-bold">Your Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required class="form-field">
+                    <input id="name" name="name" type="text" class="form-field" placeholder="Enter your name" required>
                 </div>
 
                 <div>
-                    <label for="email" class="mb-2 block font-bold">Your Email</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required
-                        class="form-field">
+                    <label for="email" class="mb-2 block font-bold">Email Address</label>
+                    <input id="email" name="email" type="email" class="form-field" placeholder="Enter your email"
+                        required>
                 </div>
 
                 <div>
-                    <label for="message" class="mb-2 block font-bold">Your Message</label>
-                    <textarea id="message" name="message" rows="5" placeholder="Write your message..." required
-                        class="form-field"></textarea>
+                    <label for="message" class="mb-2 block font-bold">Message</label>
+                    <textarea id="message" name="message" rows="5" class="form-field"
+                        placeholder="Write your message..." required></textarea>
                 </div>
 
-                <button type="submit" class="btn-accent w-full sm:w-fit">
-                    Send Message →
-                </button>
-
+                <button type="submit" class="btn-accent w-full">Send Message</button>
+                <p id="formNotice" class="text-center font-semibold" aria-live="polite"></p>
             </form>
         </section>
-
     </main>
-    <!-- <script src="script.js"></script> -->
+
+    <!-- Footer -->
+    <footer class="mt-12 border-t border-white/30 px-6 py-8 text-center">
+        <p class="font-bold">KULOTWORKZZ</p>
+        <p class="mt-2 text-sm">© <span id="year"></span> KULOTWORKZZ. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+    <script>console.log("Gsap ver", gsap.version);
+        //1. Tween
+        //gsap.to("h1", { x: 100, duration: 2 });
+        //gsap.from("h1", { y: -60, opacity: 0, duration: 1 })
+        //gsap.fromTo("h1", { opacity: 0 }, { opacity: 1, duration: 3 });
+
+        //2. Easing
+        //gsap.from("h1", {y: -60, opacity: 0, duration: 1, ease: "bounce.out(3,0.5)"});
+        //"power2.out"
+        //"back.out(3)"
+        //"bounce.out"
+        //"elastic.out(1, 0.5)"
+
+        //3.Stagger
+        //gsap.from('nav a', { y: -100, opacity: 0, duration: 0.5, ease: "bounce.out", stagger: 0.5 });
+
+        //4.Timeline
+        const timeline = gsap.timeline({ defaults: { duration: 0.6, ease: "power3.out" } });
+        timeline.from("h1", { y: -40, opacity: 0, duration: 0.6 });
+        timeline.from("nav a", { y: -25, opacity: 0, duration: 0.4, ease: "back.out(1.7)", stagger: 0.08 }, "-=0.3");
+        timeline.from("main section", { y: 40, opacity: 0, duration: 0.6, stagger: 0.15, ease: "power3.out" }, "-=0.2");
+
+    </script>
+
     <script>
-        const togglebutton = document.querySelector("#toggledark");
-        const html = document.querySelector('html');
-        togglebutton.addEventListener("click", function () {
-            html.classList.toggle("dark");
+        const html = document.documentElement;
+        const toggleButton = document.getElementById('toggledark');
+        const replayButton = document.getElementById('replayIntro');
+
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to("#gearIcon", {
+            rotation: 360, duration: 0.5, ease: "none", scrollTrigger: { trigger: "#about", start: "top 80%", end: "bottom 20%", scrub: 10 }
+
+        });
+        replayButton.addEventListener('click', function () {
+            timeline.restart();
+        });
+
+        toggleButton.addEventListener('click', function () {
+            html.classList.toggle('dark');
+            gsap.to(toggleButton, { rotation: "+=360", duration: 0.6, ease: "bounce.out", });
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            document.getElementById('formNotice').textContent =
+                'Thank you! Your form is ready, but sending messages requires a backend or email service.';
+            this.reset();
+
         });
     </script>
+
 </body>
 
 </html>
